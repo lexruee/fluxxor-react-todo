@@ -1,0 +1,45 @@
+{
+  "name": "fluxxor-react-todo",
+  "version": "0.0.0",
+  "description": "fluxxor-react-todo",
+
+  "main": "app.js",
+
+  "license": "MIT",
+  "private": true,
+
+  "author": {
+    "name": "Alexander Rüedlinger",
+    "email": "a.rueedlinger@gmail.com"
+  },
+
+  "dependencies": {
+    "express": ">= 4.0.0",
+    "request": ">= 0",
+    "jsonld": ">= 0",
+    "react": ">= 0",
+    "jquery": ">= 0",
+    "fluxxor": ">= 0"
+  },
+
+  "devDependencies": {
+    "nodemon": "^1.2.1",
+    "browserify": ">= 0",
+    "reactify": ">= 0",
+    "watchify": ">= 0"
+  },
+
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+
+  "scripts": {
+    "watch": "watchify app.js -o public/bundle.js -v",
+    "browserify": "browserify app.js > public/bundle.js",
+    "build": "npm run browserify ",
+    "start": "npm run watch & nodemon server.js"
+  }
+
+}
